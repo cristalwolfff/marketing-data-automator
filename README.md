@@ -1,58 +1,98 @@
-# 📊 Marketing Data Automator
+# 📊 Marketing Intelligence Pipeline (ETL)
+*(Automated Financial Analysis for Ad Campaigns)*
 
-> Uma ferramenta Python para processar dados brutos de campanhas e gerar insights estratégicos automaticamente.
+![Python](https://img.shields.io/badge/Core-Python_3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Focus](https://img.shields.io/badge/Focus-Data_Engineering_&_ETL-5C4EE5?style=for-the-badge&logo=pandas&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Production_Ready-success?style=for-the-badge)
 
-![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge&logo=python&logoColor=white)
-![Status](https://img.shields.io/badge/Status-Finalizado-success?style=for-the-badge)
+> **"From Raw Data to Actionable Strategy."**
+> A robust Python engine designed to eliminate manual Excel reporting by automating the ingestion, processing, and ranking of marketing campaign data.
 
-## 🎯 O Problema
-No dia a dia de Marketing Digital, analistas perdem horas calculando métricas manualmente em planilhas (Excel), o que gera gargalos operacionais e risco de erro humano.
+---
 
-## 💡 A Solução
-Desenvolvi este script para automatizar a ingestão de dados de campanhas e o cálculo instantâneo de KPIs críticos. O algoritmo processa listas de dados e devolve um dashboard via terminal com as melhores performances.
+## 🎯 The Business Problem
+In digital marketing operations, analysts waste hours manually calculating metrics across fragmented spreadsheets. This legacy process creates:
+1.  **Operational Bottlenecks:** Time spent calculating instead of strategizing.
+2.  **Data Integrity Risks:** Human error in formulas (e.g., broken ROI calculations).
+3.  **Latency:** Delays in identifying underperforming ads.
 
-## ⚙️ Funcionalidades
-- **Cálculo de CTR (Click-Through Rate):** Mede a atratividade do anúncio.
-- **Cálculo de CPA (Cost Per Acquisition):** Monitora a eficiência do investimento.
-- **Cálculo de ROI (Return on Investment):** Identifica lucro ou prejuízo real.
-- **Ranking Automático:** O script compara as campanhas e elege a "Campeã de Performance" baseada no ROI.
-- **Tratamento de Erros:** O código previne falhas comuns como divisão por zero em campanhas sem impressões.
+## 💡 The Engineering Solution
+I engineered this script as a **lightweight ETL (Extract, Transform, Load) pipeline**.
+It ingests raw campaign dictionaries, applies hard-coded business logic to calculate financial health, and outputs a ranked decision-support dashboard in the terminal.
 
-## 🚀 Como Rodar
-Você não precisa instalar nenhuma biblioteca externa, apenas o Python nativo.
+---
 
-1. Clone este repositório:
-```bash
-git clone https://github.com/cristalwolfff/marketing-data-automator.git
+## ⚙️ Core Architecture & Features
+
+### 1. Business Logic Normalization (The "Transform" Layer)
+The system implements standard financial models directly into the code structure:
+* **CTR (Click-Through Rate):** Measures ad resonance (`Clicks / Impressions`).
+* **CPA (Cost Per Acquisition):** Tracks efficiency (`Cost / Conversions`).
+* **ROI (Return on Investment):** Calculates net profitability (`(Revenue - Cost) / Cost`).
+
+### 2. Algorithmic Decision Support
+* **Auto-Ranking:** The script doesn't just display numbers; it executes a sorting algorithm to identify the "Champion" campaign based on ROI.
+* **Status Classification:** Automatically tags campaigns as `✅ Profit` or `🔻 Loss` based on financial thresholds.
+
+### 3. Robust Error Handling
+* **Zero-Division Protection:** Includes defensive coding to handle edge cases (e.g., campaigns with 0 impressions) without crashing the pipeline.
+
+---
+
+## 📸 Automated Output Demo
+The system generates a clean, readable CLI dashboard for instant analysis:
+
+```text
+--- PROCESSING CAMPAIGN DATA BATCH ---
+
+CAMPAIGN             | CTR        | ROI        | STATUS
+------------------------------------------------------------
+Black Friday Ads     | 5.00%      | 400.00%    | ✅ Profit
+App Launch v2        | 1.50%      | -25.00%    | 🔻 Loss
+Flash Sale Promo     | 8.00%      | 500.00%    | ✅ Profit
+------------------------------------------------------------
+
+🏆 PERFORMANCE CHAMPION: Flash Sale Promo (ROI: 500.00%)
+
 ```
 
-2. Entre na pasta:
+---
+
+## 🚀 How to Run (Zero-Dependency)
+
+This tool was built with **Native Python 3**, requiring no external libraries (like Pandas) for easy deployment in restricted environments.
+
+1. **Clone the repository:**
+```bash
+git clone [https://github.com/cristalwolfff/marketing-data-automator.git](https://github.com/cristalwolfff/marketing-data-automator.git)
+
+```
+
+
+2. **Navigate to directory:**
 ```bash
 cd marketing-data-automator
+
 ```
 
-3. Execute o script:
+
+3. **Run the Pipeline:**
 ```bash
 python analisador.py
+
 ```
 
-##📸 Exemplo de Saída
-```Plaintext
 
---- INICIANDO PROCESSAMENTO DE 3 CAMPANHAS ---
 
-CAMPANHA             | CTR        | ROI        | STATUS
-------------------------------------------------------------
-Black Friday Ads     | 5.00%      | 400.00%    | ✅ Lucro
-Lançamento App       | 1.50%      | -25.00%    | 🔻 Prejuízo
-Promoção Relâmpago   | 8.00%      | 500.00%    | ✅ Lucro
-------------------------------------------------------------
+---
 
-🏆 CAMPEÃ DE PERFORMANCE: Promoção Relâmpago (ROI: 500.00%)
+## 🛠️ Tech Stack
+
+* **Python 3:** Core logic using Lists/Dictionaries, f-strings, and mathematical operators.
+* **Business Logic:** Implementation of MarTech formulas (KPIs).
+
+---
+
+*Developed by [Cristalwolf](https://github.com/cristalwolfff) // AI & MarTech Engineer*
+
 ```
-
-## 🛠️ Tecnologias Utilizadas
-* Python 3: Estruturas de dados (Listas/Dicionários), Funções, F-Strings e Lógica Condicional.
-* Lógica de Negócio: Modelagem de fórmulas financeiras aplicadas ao Marketing.
-
-## Desenvolvido por Cristalwolf Dias 🐺
